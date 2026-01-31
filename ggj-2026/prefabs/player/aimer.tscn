@@ -3,8 +3,16 @@
 [ext_resource type="Script" uid="uid://dsgjd8beb4ba" path="res://scripts/player/aimer.gd" id="1_2g0nk"]
 [ext_resource type="Texture2D" uid="uid://1ljvcm6mb6kn" path="res://assets/sprites/player/reticule.png" id="2_y2jqw"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2g0nk"]
+radius = 20.024984
+
 [node name="Aimer" type="Node2D" unique_id=2081886312]
 script = ExtResource("1_2g0nk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1885234671]
 texture = ExtResource("2_y2jqw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=95891028]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1461551350]
+shape = SubResource("CircleShape2D_2g0nk")
