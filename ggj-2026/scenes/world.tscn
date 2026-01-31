@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover/mover.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_k0juu"]
@@ -17,9 +16,6 @@ script = ExtResource("1_rwgxs")
 [node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
 y_sort_enabled = true
 script = ExtResource("1_nnsk1")
-
-[node name="Mover" parent="AstronautList" unique_id=128624373 instance=ExtResource("3_k0juu")]
-position = Vector2(1364, 515)
 
 [node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
 position = Vector2(881, 508)

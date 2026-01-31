@@ -14,6 +14,7 @@ load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.cte
 
 [node name="Mover" type="CharacterBody2D" unique_id=128624373]
 y_sort_enabled = true
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_u6tph")
 
