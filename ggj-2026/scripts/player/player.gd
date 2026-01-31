@@ -23,6 +23,7 @@ func walk():
 
 func bomb():
 	if Input.is_action_just_pressed("bomb") and can_bomb:
+		print("BOMB!!!")
 		var instance: Bomb = bomb_scene.instantiate()
 		instance.position = position
 		get_tree().get_root().add_child(instance)
