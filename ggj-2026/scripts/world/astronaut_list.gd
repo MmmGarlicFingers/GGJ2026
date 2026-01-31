@@ -2,23 +2,42 @@ extends Node2D
 
 var aim_reach = 100
 var astronaut_scene : PackedScene = preload("res://prefabs/astronaut.tscn")
+var mover_scene : PackedScene = preload("res://prefabs/player/mover.tscn")
 var highlighted : Node2D
 var speed = 300
 
 func setup(astro_count : int) -> void:
+	var mover = mover_scene.instantiate()
+	mover.position = NavigationServer2D.map_get_random_point(
+		get_world_2d().navigation_map,
+		1,
+		true
+	)
+	mover.speed = speed
+	
+	add_child(mover)
+	
+	await get_tree().create_timer(1.).timeout
+	
 	for i in range(astro_count):
 		var astronaut = astronaut_scene.instantiate()
-		astronaut.position = Vector2(
-			randf_range(-500, 500),
-			randf_range(-500, 500)
-			)
+		astronaut.position = NavigationServer2D.map_get_random_point(
+			get_world_2d().navigation_map,
+			1,
+			true
+		)
 		astronaut.speed = speed
 		add_child(astronaut)
+	
+	
+	
 
 func highlight_nearest(pos : Vector2) -> void:
 	var nearest = get_nearest_astronaut(pos)
 	if !highlighted:
 		highlighted = nearest
+		if !highlighted:
+			return
 		
 	if highlighted != nearest:
 		highlighted.set_hover(false)

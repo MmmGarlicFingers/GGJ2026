@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://csnvj3ktrwesj"]
+
+[ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/player.gd" id="1_u6tph"]
+[ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="2_ujkm7"]
+[ext_resource type="Texture2D" uid="uid://b0n7ykpi7ottt" path="res://assets/sprites/player/legallydistinctspaceman1.png" id="3_7ox6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
+size = Vector2(40, 25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehm3u"]
+shader = ExtResource("2_ujkm7")
+
+[node name="Mover" type="CharacterBody2D" unique_id=128624373]
+y_sort_enabled = true
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_u6tph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=29905702]
+position = Vector2(2, 35.5)
+shape = SubResource("RectangleShape2D_vhqb2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1513300685]
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=1754125571]
+visible = false
+material = SubResource("ShaderMaterial_ehm3u")
+position = Vector2(1.9073486e-06, 1.1324883e-06)
+scale = Vector2(1.1874999, 1.0416666)
+texture = ExtResource("3_7ox6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567698290]
+y_sort_enabled = true
+position = Vector2(-4.7683716e-07, -2.861023e-06)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_7ox6u")

@@ -2,30 +2,36 @@
 
 [ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="1_dmfei"]
 [ext_resource type="Script" uid="uid://pgiraq8autac" path="res://scripts/Astronaut/astronaut.gd" id="1_lk35g"]
-[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="1_v06w7"]
+[ext_resource type="Texture2D" uid="uid://b0n7ykpi7ottt" path="res://assets/sprites/player/legallydistinctspaceman1.png" id="4_sm770"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lk35g"]
 shader = ExtResource("1_dmfei")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuoki"]
-size = Vector2(96, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuoki"]
+radius = 16.0
 
 [node name="Astronaut" type="CharacterBody2D" unique_id=1368299583]
 y_sort_enabled = true
+collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_lk35g")
 
 [node name="Outline" type="Sprite2D" parent="." unique_id=887508830]
 visible = false
 material = SubResource("ShaderMaterial_lk35g")
-scale = Vector2(0.85, 0.85)
-texture = ExtResource("1_v06w7")
+position = Vector2(0, -34.999996)
+scale = Vector2(1.1874999, 1.0416666)
+texture = ExtResource("4_sm770")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144308845]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=980429541]
 y_sort_enabled = true
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_v06w7")
+position = Vector2(-4.2915344e-06, -35)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_sm770")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1532546652]
-position = Vector2(0, 35)
-shape = SubResource("RectangleShape2D_fuoki")
+position = Vector2(-3.8146973e-06, 0)
+shape = SubResource("CircleShape2D_fuoki")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1661944615]
+avoidance_enabled = true

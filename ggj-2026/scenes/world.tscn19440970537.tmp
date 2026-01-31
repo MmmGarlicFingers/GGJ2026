@@ -2,18 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover/mover.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
-[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="4_k0juu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_k0juu"]
-vertices = PackedVector2Array(1458.1016, 833.14844, 1925.9922, 1102.7031, 158.32031, 1097.8828, 638.6172, 834.2422, 1931.6016, 166.95313, 1446.3281, 391.7578, 133.10156, 153.45313, 640.97656, 392.84375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(4, 1, 0), PackedInt32Array(4, 0, 5), PackedInt32Array(6, 4, 5), PackedInt32Array(6, 5, 7), PackedInt32Array(3, 2, 6), PackedInt32Array(6, 7, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(99, 120, 126, 1131, 1959, 1136, 1965, 134), PackedVector2Array(674, 426, 1414, 425, 1424, 800, 672, 801)])
+vertices = PackedVector2Array(1425.0625, 801.77344, 1922.8516, 1065.9297, 138.78125, 1055.0469, 647.64844, 753.3125, 118.21875, 144.74219, 688.1328, 453.95313, 1909.1406, 99.25, 1350.2109, 377.9922)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(3, 2, 4), PackedInt32Array(5, 3, 4), PackedInt32Array(5, 4, 6), PackedInt32Array(7, 5, 6), PackedInt32Array(6, 1, 0), PackedInt32Array(6, 0, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(108, 135, 129, 1065, 1933, 1076, 1919, 89), PackedVector2Array(697, 463, 1342, 389, 1413, 791, 659, 744)])
 sample_partition_type = 1
-agent_radius = 33.2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
-size = Vector2(717.5, 353)
 
 [node name="World" type="Node2D" unique_id=689629584]
 script = ExtResource("1_rwgxs")
@@ -22,28 +18,17 @@ script = ExtResource("1_rwgxs")
 y_sort_enabled = true
 script = ExtResource("1_nnsk1")
 
+[node name="Mover" parent="AstronautList" unique_id=128624373 instance=ExtResource("3_k0juu")]
+position = Vector2(1364, 515)
+
 [node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
 position = Vector2(881, 508)
 
 [node name="Map" type="Node2D" parent="." unique_id=1838276735]
-y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Map" unique_id=1279456709]
-position = Vector2(-85, -107)
+position = Vector2(-79, -98)
 navigation_polygon = SubResource("NavigationPolygon_k0juu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Map" unique_id=1108818111]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(960.5, 510)
-scale = Vector2(5.5703125, 2.7656252)
-texture = ExtResource("4_k0juu")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map" unique_id=1478886712]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D" unique_id=1342988542]
-position = Vector2(958.25, 503)
-shape = SubResource("RectangleShape2D_k0juu")
 
 [node name="Border" type="Node2D" parent="." unique_id=393272209]
 
