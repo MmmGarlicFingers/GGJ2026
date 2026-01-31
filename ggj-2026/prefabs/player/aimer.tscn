@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qciu1eja1e7j"]
+
+[ext_resource type="Script" uid="uid://dsgjd8beb4ba" path="res://scripts/player/aimer.gd" id="1_2g0nk"]
+[ext_resource type="Texture2D" uid="uid://1ljvcm6mb6kn" path="res://assets/sprites/player/reticule.png" id="2_y2jqw"]
+
+[node name="Aimer" type="Node2D" unique_id=2081886312]
+script = ExtResource("1_2g0nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1885234671]
+texture = ExtResource("2_y2jqw")
