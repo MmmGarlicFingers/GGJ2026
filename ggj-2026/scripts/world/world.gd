@@ -15,7 +15,7 @@ func _ready() -> void:
 	aimer.world = self
 	astronaut_list.speed = SPEED
 	await get_tree().create_timer(0.1).timeout
-	astronaut_list.setup(20)
+	astronaut_list.setup(10)
 	
 func aimer_move(pos : Vector2) -> void:
 	astronaut_list.highlight_nearest(pos)

@@ -15,6 +15,8 @@ var stopwatch : float = 0.
 
 func _ready() -> void:
 	get_new_target_position()
+	if randf_range(0, 1) < .5:
+		state = State.WAITING
 
 func _physics_process(delta: float) -> void:
 	stopwatch += delta
@@ -28,14 +30,10 @@ func set_hover(hover_status : bool) -> void:
 func decide_next_action() -> void:
 	if state == State.MOVING:
 		walk()
-		print("MOVING")
-		print(global_position.distance_to(nav_agent.target_position))
-		if global_position.distance_to(nav_agent.target_position) < randf_range(0, 100) or stopwatch > 5:
-			
+		if global_position.distance_to(nav_agent.target_position) < randf_range(0, 100):
 			state = State.WAITING
 			stopwatch = 0
 	elif state == State.WAITING:
-		print("WAITING")
 		velocity *= 0
 		if stopwatch > randf_range(1, 100):
 			if randf_range(0, 1) < .5:
@@ -46,7 +44,6 @@ func decide_next_action() -> void:
 				state = State.MOVING
 				stopwatch = 0
 	elif state == State.EMOTING:
-		print("EMOTING")
 		if stopwatch > randf_range(0, 10):
 			if randf_range(0, 1) < .5:
 				state = State.EMOTING

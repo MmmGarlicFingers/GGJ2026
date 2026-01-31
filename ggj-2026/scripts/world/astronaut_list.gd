@@ -7,6 +7,18 @@ var highlighted : Node2D
 var speed = 300
 
 func setup(astro_count : int) -> void:
+	var mover = mover_scene.instantiate()
+	mover.position = NavigationServer2D.map_get_random_point(
+		get_world_2d().navigation_map,
+		1,
+		true
+	)
+	mover.speed = speed
+	
+	add_child(mover)
+	
+	await get_tree().create_timer(1.).timeout
+	
 	for i in range(astro_count):
 		var astronaut = astronaut_scene.instantiate()
 		astronaut.position = NavigationServer2D.map_get_random_point(
@@ -17,15 +29,7 @@ func setup(astro_count : int) -> void:
 		astronaut.speed = speed
 		add_child(astronaut)
 	
-	var mover = mover_scene.instantiate()
-	mover.position = NavigationServer2D.map_get_random_point(
-		get_world_2d().navigation_map,
-		1,
-		true
-	)
-	mover.speed = speed
 	
-	add_child(mover)
 	
 
 func highlight_nearest(pos : Vector2) -> void:
