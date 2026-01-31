@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ndd7mix8eu3w"
-path="res://.godot/imported/1.svg-7d1e62be732e2a141c3ef82ec85cc7ca.ctex"
+uid="uid://cuk8x6ppebd0q"
+path="res://.godot/imported/legallydistinctspaceman2.png-9bd3371c63d9d436f807efb9cea1583f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1.svg"
-dest_files=["res://.godot/imported/1.svg-7d1e62be732e2a141c3ef82ec85cc7ca.ctex"]
+source_file="res://assets/sprites/player/legallydistinctspaceman2.png"
+dest_files=["res://.godot/imported/legallydistinctspaceman2.png-9bd3371c63d9d436f807efb9cea1583f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
