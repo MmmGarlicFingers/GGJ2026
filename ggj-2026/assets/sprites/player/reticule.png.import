@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uslsnn6hmeol"
-path="res://.godot/imported/2.svg-3705a1674e8b6152dea4ce8651ad75c8.ctex"
+uid="uid://1ljvcm6mb6kn"
+path="res://.godot/imported/reticule.png-46f5eef38da3f371b46d20d7f37236eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/2.svg"
-dest_files=["res://.godot/imported/2.svg-3705a1674e8b6152dea4ce8651ad75c8.ctex"]
+source_file="res://assets/sprites/player/reticule.png"
+dest_files=["res://.godot/imported/reticule.png-46f5eef38da3f371b46d20d7f37236eb.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
