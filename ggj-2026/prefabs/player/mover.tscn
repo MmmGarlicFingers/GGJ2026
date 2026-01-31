@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dameni8akrl53"]
+
+[ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/player.gd" id="1_u6tph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
+size = Vector2(96, 96)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w7wdm"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="Mover" type="CharacterBody2D" unique_id=128624373]
+script = ExtResource("1_u6tph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=29905702]
+shape = SubResource("RectangleShape2D_vhqb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1416397470]
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_w7wdm")
