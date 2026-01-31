@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="2_ujkm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
-size = Vector2(96, 96)
+size = Vector2(96, 25)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ox6u"]
 shader = ExtResource("2_ujkm7")
@@ -13,9 +13,12 @@ shader = ExtResource("2_ujkm7")
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="Mover" type="CharacterBody2D" unique_id=128624373]
+y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_u6tph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=29905702]
+position = Vector2(0, 35.5)
 shape = SubResource("RectangleShape2D_vhqb2")
 
 [node name="Outline" type="Sprite2D" parent="." unique_id=230260658]

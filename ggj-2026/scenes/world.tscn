@@ -9,6 +9,7 @@
 script = ExtResource("1_rwgxs")
 
 [node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
+y_sort_enabled = true
 script = ExtResource("1_nnsk1")
 
 [node name="Mover" parent="AstronautList" unique_id=128624373 instance=ExtResource("3_k0juu")]
