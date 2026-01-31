@@ -30,5 +30,4 @@ func _handle_movement(delta : float) -> void:
 		world.aimer_move(position)
 
 func _handle_shooting() -> void:
-	var scene = WinScreen.new(false)
-	get_tree().change_scene_to_node(scene)
+	world.shoot(position)

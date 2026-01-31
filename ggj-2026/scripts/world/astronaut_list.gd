@@ -25,6 +25,16 @@ func highlight_nearest(pos : Vector2) -> void:
 	else:
 		highlighted.set_hover(true)
 
+func try_shooting_player(pos : Vector2) -> bool:
+	var nearest = get_nearest_astronaut(pos)
+	var dist = (pos - highlighted.position).length()
+	var aimer_win : bool = false
+	if dist < aim_reach:
+		if nearest.is_player:
+			aimer_win = true
+	
+	return aimer_win
+
 func get_nearest_astronaut(pos : Vector2) -> Node2D:
 	var nearest = 2000
 	var return_node = null

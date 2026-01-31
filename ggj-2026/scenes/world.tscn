@@ -8,11 +8,11 @@
 [node name="World" type="Node2D" unique_id=689629584]
 script = ExtResource("1_rwgxs")
 
-[node name="Mover" parent="." unique_id=128624373 instance=ExtResource("3_k0juu")]
-position = Vector2(567, 446)
-
 [node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
 script = ExtResource("1_nnsk1")
+
+[node name="Mover" parent="AstronautList" unique_id=128624373 instance=ExtResource("3_k0juu")]
+position = Vector2(1364, 515)
 
 [node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
 position = Vector2(881, 508)

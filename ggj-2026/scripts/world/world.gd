@@ -13,3 +13,8 @@ func _ready() -> void:
 	
 func aimer_move(pos : Vector2) -> void:
 	astronaut_list.highlight_nearest(pos)
+
+func shoot(pos : Vector2) -> void:
+	var win = astronaut_list.try_shooting_player(pos)
+	var scene = WinScreen.new(win)
+	get_tree().change_scene_to_node(scene)
