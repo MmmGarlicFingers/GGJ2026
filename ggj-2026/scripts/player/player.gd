@@ -31,7 +31,12 @@ func bomb():
 		var instance: Bomb = bomb_scene.instantiate()
 		instance.position = position
 		get_tree().get_root().add_child(instance)
-		instance.tree_exited.connect(enable_bomb)
+		var instance_children = instance.get_children()
+		var instance_animation: AnimatedSprite2D
+		for child in instance_children:
+			if child is AnimatedSprite2D:
+				instance_animation = child
+		instance_animation.animation_finished.connect(enable_bomb)
 		disable_bomb()
 
 func enable_bomb():
@@ -39,4 +44,3 @@ func enable_bomb():
 
 func disable_bomb():
 	can_bomb = false
-
