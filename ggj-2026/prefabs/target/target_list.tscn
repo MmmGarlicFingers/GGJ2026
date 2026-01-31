@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://td00433vmlir"]
+
+[ext_resource type="Script" uid="uid://rm6yfea5kjav" path="res://scripts/target/target_list.gd" id="1_j7oei"]
+
+[node name="TargetList" type="Node2D" unique_id=906160339]
+script = ExtResource("1_j7oei")

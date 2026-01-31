@@ -4,7 +4,7 @@ class_name World
 const SPEED = 300
 
 var aimer_scene = preload("res://prefabs/player/aimer.tscn")
-var mover_scene = preload("res://prefabs/player/mover.tscn")
+var mover_scene = preload("res://prefabs/player/mover/mover.tscn")
 
 @onready var astronaut_list = $AstronautList
 @onready var aimer = $Aimer
