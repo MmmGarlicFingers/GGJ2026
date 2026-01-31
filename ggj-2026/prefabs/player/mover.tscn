@@ -30,3 +30,5 @@ texture = SubResource("CompressedTexture2D_w7wdm")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1416397470]
 scale = Vector2(0.75, 0.75)
 texture = SubResource("CompressedTexture2D_w7wdm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1513300685]
