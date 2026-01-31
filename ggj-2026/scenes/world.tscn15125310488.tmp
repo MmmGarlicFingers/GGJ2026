@@ -17,14 +17,3 @@ position = Vector2(1364, 515)
 
 [node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
 position = Vector2(881, 508)
-
-[node name="Map" type="Node2D" parent="." unique_id=1838276735]
-
-[node name="Border" type="Node2D" parent="." unique_id=393272209]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Border" unique_id=774175261]
-collision_layer = 3
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border/StaticBody2D" unique_id=836614872]
-polygon = PackedVector2Array(11, 11, 23, 1040, 1893, 1048, 1885, 23, 14, 11, 16, -14, 1977, -39, 1971, 1147, -40, 1099, -7, -15, 10, -15)

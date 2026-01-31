@@ -1,14 +1,18 @@
 extends Node2D
 class_name World
 
+const SPEED = 300
+
 var aimer_scene = preload("res://prefabs/player/aimer.tscn")
 var mover_scene = preload("res://prefabs/player/mover.tscn")
 
 @onready var astronaut_list = $AstronautList
+@onready var aimer = $Aimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Aimer.world = self
+	aimer.world = self
+	astronaut_list.speed = SPEED
 	astronaut_list.setup(20)
 	
 func aimer_move(pos : Vector2) -> void:

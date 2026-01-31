@@ -1,8 +1,7 @@
-extends Node2D
+extends CharacterBody2D
 
-var speed := 500.
+var speed := 300.
 var world : World
-@onready var hitbox : Area2D = $Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,15 +10,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_handle_movement(delta)
+	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		_handle_shooting()
 
 func _handle_movement(delta : float) -> void:
-	var movement_axis = Vector2(
-		Input.get_axis("aim_left", "aim_right"),
-		Input.get_axis("aim_up", "aim_down")
+	var movement_axis = Input.get_vector(
+		"aim_left",
+		"aim_right",
+		"aim_up",
+		"aim_down"
 	)
 	
 	if movement_axis.length() > 1:

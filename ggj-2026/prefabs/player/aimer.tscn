@@ -4,15 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://1ljvcm6mb6kn" path="res://assets/sprites/player/reticule.png" id="2_y2jqw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2g0nk"]
-radius = 20.024984
+radius = 48.010414
 
-[node name="Aimer" type="Node2D" unique_id=2081886312]
+[node name="Aimer" type="CharacterBody2D" unique_id=923529871]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
 script = ExtResource("1_2g0nk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1885234671]
 texture = ExtResource("2_y2jqw")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=95891028]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1461551350]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=705422539]
 shape = SubResource("CircleShape2D_2g0nk")

@@ -1,7 +1,10 @@
 extends Node2D
+
 var aim_reach = 100
 var astronaut_scene : PackedScene = preload("res://prefabs/astronaut.tscn")
 var highlighted : Node2D
+var speed = 300
+
 func setup(astro_count : int) -> void:
 	for i in range(astro_count):
 		var astronaut = astronaut_scene.instantiate()
@@ -9,6 +12,7 @@ func setup(astro_count : int) -> void:
 			randf_range(-500, 500),
 			randf_range(-500, 500)
 			)
+		astronaut.speed = speed
 		add_child(astronaut)
 
 func highlight_nearest(pos : Vector2) -> void:
