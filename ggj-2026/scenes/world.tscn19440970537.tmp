@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://vxm4yhk2kw0g"]
+
+[ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover/mover.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k0juu"]
+vertices = PackedVector2Array(1425.0625, 801.77344, 1922.8516, 1065.9297, 138.78125, 1055.0469, 647.64844, 753.3125, 118.21875, 144.74219, 688.1328, 453.95313, 1909.1406, 99.25, 1350.2109, 377.9922)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(3, 2, 4), PackedInt32Array(5, 3, 4), PackedInt32Array(5, 4, 6), PackedInt32Array(7, 5, 6), PackedInt32Array(6, 1, 0), PackedInt32Array(6, 0, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(108, 135, 129, 1065, 1933, 1076, 1919, 89), PackedVector2Array(697, 463, 1342, 389, 1413, 791, 659, 744)])
+sample_partition_type = 1
+
+[node name="World" type="Node2D" unique_id=689629584]
+script = ExtResource("1_rwgxs")
+
+[node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
+y_sort_enabled = true
+script = ExtResource("1_nnsk1")
+
+[node name="Mover" parent="AstronautList" unique_id=128624373 instance=ExtResource("3_k0juu")]
+position = Vector2(1364, 515)
+
+[node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
+position = Vector2(881, 508)
+
+[node name="Map" type="Node2D" parent="." unique_id=1838276735]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Map" unique_id=1279456709]
+position = Vector2(-79, -98)
+navigation_polygon = SubResource("NavigationPolygon_k0juu")
+
+[node name="Border" type="Node2D" parent="." unique_id=393272209]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Border" unique_id=774175261]
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border/StaticBody2D" unique_id=836614872]
+polygon = PackedVector2Array(11, 11, 23, 1040, 1893, 1048, 1885, 23, 14, 11, 16, -14, 1977, -39, 1971, 1147, -40, 1099, -7, -15, 10, -15)

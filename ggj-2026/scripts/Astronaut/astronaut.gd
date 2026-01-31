@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 	
 func _physics_process(delta: float) -> void:
-	var direction = decide_move()
+	var direction = Vector2(randf_range(-1,1),randf_range(-1,1))
 
 	if direction:
 		velocity.x = direction.x * speed
@@ -24,5 +24,5 @@ func _physics_process(delta: float) -> void:
 func set_hover(hover_status : bool) -> void:
 	outline.visible = hover_status
 
-func decide_move() -> Vector2:
+func decide_move() -> void:
 	pass
