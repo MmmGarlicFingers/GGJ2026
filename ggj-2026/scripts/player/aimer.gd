@@ -1,7 +1,9 @@
 extends Node2D
 
 var speed := 500.
+var world : World
 @onready var hitbox : Area2D = $Area2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,6 +25,9 @@ func _handle_movement(delta : float) -> void:
 	if movement_axis.length() > 1:
 		movement_axis = movement_axis.normalized()
 	position += movement_axis*speed*delta
+	
+	if world:
+		world.aimer_move(position)
 
 func _handle_shooting() -> void:
 	var scene = WinScreen.new(false)

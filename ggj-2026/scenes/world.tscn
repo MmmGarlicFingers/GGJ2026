@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vxm4yhk2kw0g"]
+
+[ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
+
+[node name="World" type="Node2D" unique_id=689629584]
+script = ExtResource("1_rwgxs")
+
+[node name="Mover" parent="." unique_id=128624373 instance=ExtResource("3_k0juu")]
+position = Vector2(567, 446)
+
+[node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
+script = ExtResource("1_nnsk1")
+
+[node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("4_71j4m")]
+position = Vector2(881, 508)
