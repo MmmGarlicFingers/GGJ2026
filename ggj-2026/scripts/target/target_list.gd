@@ -9,7 +9,6 @@ func _ready() -> void:
 		if child is Target:
 			targets += 1
 			child.tree_exited.connect(remove_target)
-			print(targets)
 
 func remove_target():
 	targets -= 1
