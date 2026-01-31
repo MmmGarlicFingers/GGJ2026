@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bi7bnhdux5ahq"]
+
+[ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="1_dmfei"]
+[ext_resource type="Script" uid="uid://pgiraq8autac" path="res://scripts/Astronaut/astronaut.gd" id="1_lk35g"]
+[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="1_v06w7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lk35g"]
+shader = ExtResource("1_dmfei")
+
+[node name="Astronaut" type="Node2D" unique_id=990395260]
+script = ExtResource("1_lk35g")
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=887508830]
+visible = false
+material = SubResource("ShaderMaterial_lk35g")
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_v06w7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144308845]
+texture = ExtResource("1_v06w7")

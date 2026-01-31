@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cexymtf4s3tyv"]
+
+[ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="1_rdx4y"]
+[ext_resource type="PackedScene" path="res://prefabs/player/mover.tscn" id="2_wv1mm"]
+
+[node name="Player" type="Node2D" unique_id=1502778742]
+
+[node name="Mover" parent="." unique_id=128624373 instance=ExtResource("2_wv1mm")]
+
+[node name="Aimer" parent="." unique_id=2081886312 instance=ExtResource("1_rdx4y")]
