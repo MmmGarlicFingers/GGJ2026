@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/player.gd" id="1_w7wdm"]
 [ext_resource type="PackedScene" uid="uid://cradqft2s01y0" path="res://prefabs/target/target.tscn" id="2_yaxis"]
+[ext_resource type="PackedScene" uid="uid://td00433vmlir" path="res://prefabs/target/target_list.tscn" id="3_he56t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
 size = Vector2(96, 96)
@@ -22,5 +23,7 @@ shape = SubResource("RectangleShape2D_vhqb2")
 scale = Vector2(0.75, 0.75)
 texture = SubResource("CompressedTexture2D_w7wdm")
 
-[node name="Target" parent="." unique_id=896393059 instance=ExtResource("2_yaxis")]
+[node name="TargetList" parent="." unique_id=906160339 instance=ExtResource("3_he56t")]
+
+[node name="Target" parent="TargetList" unique_id=896393059 instance=ExtResource("2_yaxis")]
 position = Vector2(971, 679)

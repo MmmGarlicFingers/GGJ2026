@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover/mover.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
 
 [node name="World" type="Node2D" unique_id=689629584]
