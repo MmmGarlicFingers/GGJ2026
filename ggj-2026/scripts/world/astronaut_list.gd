@@ -47,8 +47,8 @@ func setup(astro_count : int) -> void:
 			true
 		)
 		astronaut.get_node("Sprite2D").material = astronaut.get_node("Sprite2D").material.duplicate()
-		astronaut.get_node("Sprite2D").material.set_shader_parameter("suit_color", colors[i/5])
-		astronaut.get_node("Sprite2D").material.set_shader_parameter("visor_color", colors2[i%5])
+		astronaut.get_node("Sprite2D").material.set_shader_parameter("suit_color", colors[i/6])
+		astronaut.get_node("Sprite2D").material.set_shader_parameter("visor_color", colors2[i%6])
 		astronaut.speed = speed
 		add_child(astronaut)
 

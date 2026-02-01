@@ -21,7 +21,7 @@ func _ready() -> void:
 	var map = maps.pick_random().instantiate()
 	add_child(map)
 	await get_tree().create_timer(.1).timeout
-	astronaut_list.setup(20)
+	astronaut_list.setup(35)
 	
 	map.targets_destroyed.connect(targets_destroyed)
 	
