@@ -31,6 +31,10 @@ func aimer_move(pos : Vector2) -> void:
 
 func shoot(pos : Vector2) -> void:
 	var win = astronaut_list.try_shooting_player(pos)
+	
+	if win == null:
+		return
+	
 	var scene = win_scene.instantiate()
 	scene.aimer_win = win
 	get_tree().change_scene_to_node(scene)

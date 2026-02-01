@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dquyqil6k0t5l"]
+
+[ext_resource type="Script" uid="uid://easq7fopbhhq" path="res://scripts/UI/close_your_eyes.gd" id="1_vwg0f"]
+
+[node name="CloseYourEyes" type="Control" unique_id=1260581583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vwg0f")
+
+[node name="PlayerLabel" type="Label" parent="." unique_id=1809248116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "Player"
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="." unique_id=185649332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "Close your eyes
+Count to 3
+Open your eyes"
+horizontal_alignment = 1
+vertical_alignment = 1
