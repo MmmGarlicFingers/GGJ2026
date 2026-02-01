@@ -9,6 +9,14 @@ var player_2_score: int
 var mover: int
 var aimer: int
 
+# Don't worry about it
+var k_sc: Vector3
+var k_vc: Vector3
+
+var a_sc: Vector3
+var a_vc: Vector3
+
+
 func _ready():
 	
 	mover = PLAYER_1

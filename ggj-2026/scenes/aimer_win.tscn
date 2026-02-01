@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://cqpc586witqdw"]
 
 [ext_resource type="PackedScene" uid="uid://c1xcmhrenr1sr" path="res://prefabs/UI/score.tscn" id="1_fcqjq"]
+[ext_resource type="Script" uid="uid://bwn0q3vtsft8d" path="res://scripts/game over/aimer_win.gd" id="1_wftbc"]
+[ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="2_jjxr7"]
+[ext_resource type="Shader" uid="uid://ch1816nmmjpoy" path="res://scripts/shaders/astronaut.gdshader" id="3_icvtp"]
+[ext_resource type="Texture2D" uid="uid://do7nmk3jot0bw" path="res://assets/ui/astronaut.png" id="4_r5i0a"]
+[ext_resource type="Texture2D" uid="uid://bc17ab1lswchs" path="res://assets/ui/alien w green suit.png" id="6_jjxr7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyunj"]
+shader = ExtResource("3_icvtp")
+shader_parameter/suit_color = Vector3(0.41, 0.52, 0)
+shader_parameter/visor_color = Vector3(0.34, 0, 0)
+
+[sub_resource type="Animation" id="Animation_icvtp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KilledSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_r5i0a")]
+}
+
+[sub_resource type="Animation" id="Animation_r5i0a"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KilledSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_r5i0a"), ExtResource("6_jjxr7")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyunj"]
+_data = {
+&"RESET": SubResource("Animation_icvtp"),
+&"die": SubResource("Animation_r5i0a")
+}
 
 [node name="AimerWins" type="Control" unique_id=905095490]
 layout_mode = 3
@@ -9,6 +55,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wftbc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1278891721]
+position = Vector2(968, 546)
+scale = Vector2(1.01875, 1.0092592)
+texture = ExtResource("2_jjxr7")
+
+[node name="KilledSprite" type="Sprite2D" parent="." unique_id=1248059698]
+material = SubResource("ShaderMaterial_cyunj")
+position = Vector2(1022, 546)
+texture = ExtResource("4_r5i0a")
 
 [node name="Label" type="Label" parent="." unique_id=1736402528]
 layout_mode = 1
@@ -24,3 +81,6 @@ vertical_alignment = 1
 
 [node name="Score" parent="." unique_id=718639634 instance=ExtResource("1_fcqjq")]
 layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=114850778]
+libraries/ = SubResource("AnimationLibrary_cyunj")

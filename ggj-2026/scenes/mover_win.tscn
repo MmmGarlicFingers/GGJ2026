@@ -1,7 +1,82 @@
 [gd_scene format=3 uid="uid://dcsqknhtpbtn"]
 
+[ext_resource type="Script" uid="uid://caql5walfevhe" path="res://scripts/game over/mover_win.gd" id="1_5k2ew"]
 [ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_nvmv6"]
 [ext_resource type="PackedScene" uid="uid://c1xcmhrenr1sr" path="res://prefabs/UI/score.tscn" id="1_ret5w"]
+[ext_resource type="Shader" uid="uid://ch1816nmmjpoy" path="res://scripts/shaders/astronaut.gdshader" id="3_lmkmj"]
+[ext_resource type="Texture2D" uid="uid://do7nmk3jot0bw" path="res://assets/ui/astronaut.png" id="4_nmjuj"]
+[ext_resource type="Texture2D" uid="uid://c4u18dvs85h1x" path="res://assets/ui/human w green suit.png" id="6_lmkmj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1ybs"]
+shader = ExtResource("3_lmkmj")
+shader_parameter/suit_color = Vector3(0.41, 0.52, 0)
+shader_parameter/visor_color = Vector3(0.34, 0, 0)
+
+[sub_resource type="Animation" id="Animation_nmjuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KilledSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_nmjuj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KillerSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2364, 545)]
+}
+
+[sub_resource type="Animation" id="Animation_5k2ew"]
+resource_name = "die"
+length = 3.9666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KilledSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_nmjuj"), ExtResource("6_lmkmj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KillerSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.17, 2.21),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2364, 545), Vector2(2364, 545), Vector2(1608, 559)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmkmj"]
+_data = {
+&"RESET": SubResource("Animation_nmjuj"),
+&"die": SubResource("Animation_5k2ew")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmkmj"]
+shader = ExtResource("3_lmkmj")
+shader_parameter/suit_color = Vector3(0, 0, 0)
+shader_parameter/visor_color = Vector3(0, 0, 0)
 
 [node name="MoverWin" type="Control" unique_id=448593587]
 layout_mode = 3
@@ -10,11 +85,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5k2ew")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1295786184]
 position = Vector2(968, 546)
 scale = Vector2(1.01875, 1.0092592)
 texture = ExtResource("1_nvmv6")
+
+[node name="KilledSprite" type="Sprite2D" parent="." unique_id=726203003]
+material = SubResource("ShaderMaterial_l1ybs")
+position = Vector2(335, 548)
+texture = ExtResource("4_nmjuj")
 
 [node name="Label" type="Label" parent="." unique_id=196358505]
 layout_mode = 1
@@ -30,3 +111,11 @@ vertical_alignment = 1
 
 [node name="Score" parent="." unique_id=718639634 instance=ExtResource("1_ret5w")]
 layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1704371120]
+libraries/ = SubResource("AnimationLibrary_lmkmj")
+
+[node name="KillerSprite" type="Sprite2D" parent="." unique_id=1820006457]
+material = SubResource("ShaderMaterial_lmkmj")
+position = Vector2(2364, 545)
+texture = ExtResource("4_nmjuj")
