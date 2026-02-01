@@ -1,0 +1,22 @@
+[gd_resource type="Theme" format=3 uid="uid://msm3fo683uy"]
+
+[ext_resource type="FontFile" uid="uid://csht18vk1ynx" path="res://assets/fonts/GoogleSansCode-VariableFont_wght.ttf" id="1_iepjh"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wu84c"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
+color = Color(1, 1, 1, 1)
+thickness = 9
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtw2f"]
+
+[resource]
+default_font = ExtResource("1_iepjh")
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxLine_wu84c")
+Button/styles/hover = SubResource("StyleBoxLine_8ln24")
+Button/styles/normal = SubResource("StyleBoxEmpty_rtw2f")

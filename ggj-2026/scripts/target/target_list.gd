@@ -2,6 +2,8 @@ extends Node2D
 
 var targets: int = 0
 
+signal targets_destroyed
+
 func _ready() -> void:
 	var children = get_children()
 	
@@ -16,5 +18,5 @@ func remove_target():
 		mover_wins()
 
 func mover_wins():
-	var scene = WinScreen.new(false)
-	get_tree().change_scene_to_node(scene)
+	print("win")
+	targets_destroyed.emit()
