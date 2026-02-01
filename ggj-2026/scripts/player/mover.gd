@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var player: int
+
+var inputs
+
 @onready var outline = $Outline
 var is_player = true
 var speed = 300
@@ -8,6 +12,26 @@ var bomb_scene = preload("res://prefabs/player/mover/bomb.tscn")
 
 var can_bomb: bool = true
 
+func _ready() -> void:
+	player = RoundManager.get_aimer()
+
+	if player == 1:
+		inputs = {
+			"left": "right_stick_left",
+			"right": "right_stick_right",
+			"up": "right_stick_up",
+			"down": "right_stick_down",
+			"trigger": "right_trigger"
+		}
+	else:
+		inputs = {
+			"left": "left_stick_left",
+			"right": "left_stick_right",
+			"up": "left_stick_up",
+			"down": "left_stick_down",
+			"trigger": "left_trigger"
+		}
+
 func _physics_process(delta: float) -> void:
 	walk()
 	handle_visuals()
@@ -15,7 +39,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func walk():
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction = Input.get_vector(
+		inputs["left"], 
+		inputs["right"],
+		inputs["up"],
+		inputs["down"],
+		)
 	
 	if direction:
 		velocity.x = direction.x * speed
@@ -28,7 +57,7 @@ func set_hover(hover_status : bool) -> void:
 	outline.visible = hover_status
 
 func bomb():
-	if Input.is_action_just_pressed("bomb") and can_bomb:
+	if Input.is_action_just_pressed(inputs["trigger"]) and can_bomb:
 		var instance: Bomb = bomb_scene.instantiate()
 		instance.position = position
 		get_tree().get_root().add_child(instance)

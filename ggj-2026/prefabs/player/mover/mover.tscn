@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dameni8akrl53"]
 
-[ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/player.gd" id="1_u6tph"]
+[ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/mover.gd" id="1_u6tph"]
 [ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="2_ujkm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
