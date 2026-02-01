@@ -15,7 +15,7 @@ agent_radius = 33.2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
 size = Vector2(717.5, 353)
 
-[node name="World" type="Node2D" unique_id=689629584]
+[node name="World" type="Node2D" unique_id=545183643]
 script = ExtResource("1_rwgxs")
 
 [node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]

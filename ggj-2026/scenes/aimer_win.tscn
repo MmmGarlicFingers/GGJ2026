@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cqpc586witqdw"]
 
-[node name="AimerWin" type="Node2D" unique_id=1167758642]
+[ext_resource type="PackedScene" uid="uid://c1xcmhrenr1sr" path="res://prefabs/UI/score.tscn" id="1_fcqjq"]
 
-[node name="Control" type="Control" parent="." unique_id=709136304]
+[node name="AimerWins" type="Control" unique_id=905095490]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,11 +10,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control" unique_id=1448259279]
-layout_mode = 0
-offset_left = 811.0
-offset_top = 432.0
-offset_right = 1154.0
-offset_bottom = 520.0
-theme_override_font_sizes/font_size = 64
-text = "Aimer Won"
+[node name="Label" type="Label" parent="." unique_id=1736402528]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "Astronauts Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" parent="." unique_id=718639634 instance=ExtResource("1_fcqjq")]
+layout_mode = 1

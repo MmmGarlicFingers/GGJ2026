@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c1xcmhrenr1sr"]
+
+[ext_resource type="Script" uid="uid://ch32gql8hbeq5" path="res://scripts/UI/score.gd" id="1_e571y"]
+
+[node name="Score" type="Control" unique_id=718639634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e571y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=679652699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="P1_Score" type="Label" parent="HBoxContainer" unique_id=1905821148]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 128
+text = "0"
+
+[node name="P2_Score" type="Label" parent="HBoxContainer" unique_id=229081182]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 128
+text = "0"
+horizontal_alignment = 2
