@@ -28,7 +28,6 @@ func add_score(PLAYER_2_wins: bool):
 			player_2_score += 1
 		elif aimer == PLAYER_2:
 			player_1_score += 1
-	swap_roles()
 
 func swap_roles():
 	if mover == PLAYER_2:
@@ -49,3 +48,19 @@ func get_mover():
 
 func get_aimer():
 	return aimer
+
+func player_1_wins():
+	player_1_score = 0
+	player_2_score = 0
+	if aimer == PLAYER_1:
+		get_tree().change_scene_to_file("res://scenes/astronaut_victory.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/alien_victory.tscn")
+
+func player_2_wins():
+	player_1_score = 0
+	player_2_score = 0
+	if aimer == PLAYER_2:
+		get_tree().change_scene_to_file("res://scenes/astronaut_victory.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/alien_victory.tscn")
