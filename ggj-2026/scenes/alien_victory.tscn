@@ -50,19 +50,21 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_q7jiq")
 theme_override_font_sizes/font_size = 24
-text = "Announcement to all citizens of Earth,
+text = "Announcement to all citizens of the moon,
 
-Thanks to our sniper’s hard work in rooting out the enemy, the operation is complete.
+The intruders have succeeded at rooting out our agent. 
 
-The moon’s heart has been excavated, and sent by rocket down to Earth, where a tunnel had already been prepared. 
+Our home is dead. We will attempt to take rockets out to the stars and find a new home, but our success is not guaranteed. 
 
-Earth’s rotten heart has been cut away, and replaced with the Moon’s.
+Only some families are approved for removal, the rest must die along with the moon.
 
-The moon is dead, but the Earth will live again.
+Our resources are few- this is the only way.
 
-Sincerely,
+May the moon live forever in our hearts.
 
--Dag Johnson, President of Earth"
+Zeep zorp and zorp-dolences,
+
+-The Moon Emperor"
 vertical_alignment = 1
 
 [node name="Next" type="Button" parent="." unique_id=644595862]
