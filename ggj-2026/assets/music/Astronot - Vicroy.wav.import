@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drccl4pbxklfm"
+path="res://.godot/imported/Astronot - Vicroy.wav-8919fba9f1058efd13f308c3178c2af3.sample"
+
+[deps]
+
+source_file="res://assets/music/Astronot - Vicroy.wav"
+dest_files=["res://.godot/imported/Astronot - Vicroy.wav-8919fba9f1058efd13f308c3178c2af3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

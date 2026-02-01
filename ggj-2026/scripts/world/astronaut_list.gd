@@ -35,7 +35,8 @@ func setup(astro_count : int) -> void:
 	mover.get_node("Sprite2D").material.set_shader_parameter("suit_color", colors[5])
 	mover.get_node("Sprite2D").material.set_shader_parameter("visor_color", colors2[5])
 	add_child(mover)
-	
+	RoundManager.a_sc = colors[5]
+	RoundManager.a_vc = colors2[5]
 	await get_tree().create_timer(1.).timeout
 	
 	for i in range(astro_count):
@@ -73,8 +74,11 @@ func try_shooting_player(pos : Vector2):
 	var dist = (pos - highlighted.position).length()
 	var aimer_win : bool = false
 	if dist < aim_reach:
+		RoundManager.k_sc = nearest.get_node("Sprite2D").material.get_shader_parameter("suit_color")
+		RoundManager.k_vc = nearest.get_node("Sprite2D").material.get_shader_parameter("visor_color")
 		if nearest.is_player:
 			aimer_win = true
+		
 	else:
 		return null
 	

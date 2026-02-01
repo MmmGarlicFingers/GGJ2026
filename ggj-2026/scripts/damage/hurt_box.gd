@@ -6,4 +6,4 @@ func _ready() -> void:
 
 func _on_area_entered(hitbox: HitBox) -> void:
 	if hitbox != null:
-		get_parent().queue_free()
+		get_parent().destroy()
