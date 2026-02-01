@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d35q2r85wrt8y"]
+
+[ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_fcv54"]
+[ext_resource type="FontFile" uid="uid://csht18vk1ynx" path="res://assets/fonts/GoogleSansCode-VariableFont_wght.ttf" id="2_v6vjl"]
+
+[node name="EarthMission" type="Control" unique_id=1661692171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1134492148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fcv54")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=469105602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1162325364]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_v6vjl")
+theme_override_font_sizes/font_size = 24
+text = "Dear Citizen of Earth,
+
+We have found that the local life has populated the bodies of some of our workers in order to make them sabotage our mission. 
+
+We have employed you for a special task.
+
+You must find the alien among our workers, and use the Plunger Gun to remove the astronaut’s mask and their facial skin. 
+
+This will reveal the emptied vessel behind, exposing it as an alien. 
+
+However, removing the helmet and facial skin of a human will kill them and will result in a failure of your mission. 
+
+Avoid this at all costs.
+
+Observe the behaviours of our Astronauts. Find the imposter. Unmask them as a moon-man so we may dispose of them.
+
+Good luck,
+
+-TEAM LEADERS of  NASA’s MOON-HEART EXCAVATION MISSION
+
+
+"
+vertical_alignment = 1
