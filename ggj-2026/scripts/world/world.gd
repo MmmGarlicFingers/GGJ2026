@@ -18,7 +18,7 @@ var maps = [
 func _ready() -> void:
 	aimer.world = self
 	astronaut_list.speed = SPEED
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.4).timeout
 	astronaut_list.setup(20)
 	var map = maps.pick_random().instantiate()
 	map.targets_destroyed.connect(targets_destroyed)
@@ -34,6 +34,7 @@ func shoot(pos : Vector2) -> void:
 	get_tree().change_scene_to_node(scene)
 
 func targets_destroyed() -> void:
-	var scene = WinScreen.new(false)
+	var scene = win_scene.instantiate()
+	scene.aimer_win = false
 	if is_inside_tree():
 		get_tree().change_scene_to_node(scene)
