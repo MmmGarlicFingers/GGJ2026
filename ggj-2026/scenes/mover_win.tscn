@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dcsqknhtpbtn"]
 
-[node name="MoverWin" type="Node2D" unique_id=685542153]
-
-[node name="Control" type="Control" parent="." unique_id=240921139]
+[node name="Control" type="Control" unique_id=240921139]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +8,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control" unique_id=1258432025]
+[node name="Label" type="Label" parent="." unique_id=1258432025]
 layout_mode = 0
 offset_left = 811.0
 offset_top = 432.0
