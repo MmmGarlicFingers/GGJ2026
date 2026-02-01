@@ -3,6 +3,8 @@ class_name World
 
 const SPEED = 150
 
+var win_scene : PackedScene = preload("res://scenes/win_screen.tscn")
+
 var aimer_scene = preload("res://prefabs/player/aimer.tscn")
 var mover_scene = preload("res://prefabs/player/mover/mover.tscn")
 
@@ -22,5 +24,6 @@ func aimer_move(pos : Vector2) -> void:
 
 func shoot(pos : Vector2) -> void:
 	var win = astronaut_list.try_shooting_player(pos)
-	var scene = WinScreen.new(win)
+	var scene = win_scene.instantiate()
+	scene.aimer_win = win
 	get_tree().change_scene_to_node(scene)
