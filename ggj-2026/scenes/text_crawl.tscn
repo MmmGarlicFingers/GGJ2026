@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_wo7xp"]
 [ext_resource type="Texture2D" uid="uid://fm71ulrx6hf0" path="res://assets/ui/Sad Earth.png" id="2_bkova"]
 [ext_resource type="FontFile" uid="uid://csht18vk1ynx" path="res://assets/fonts/GoogleSansCode-VariableFont_wght.ttf" id="2_n6byb"]
+[ext_resource type="Script" uid="uid://boaqms1cr851l" path="res://scripts/UI/text_crawl_next.gd" id="4_bkova"]
 
 [node name="TextCrawl" type="Control" unique_id=883753058]
 layout_mode = 3
@@ -51,3 +52,23 @@ this time, to excavate its heart,
 to save our home."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Next" type="Button" parent="." unique_id=831104365]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -293.0
+offset_top = -204.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Next"
+script = ExtResource("4_bkova")
+
+[connection signal="pressed" from="Next" to="Next" method="_on_pressed"]
