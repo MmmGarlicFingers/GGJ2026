@@ -4,9 +4,15 @@
 [ext_resource type="Script" uid="uid://pgiraq8autac" path="res://scripts/Astronaut/astronaut.gd" id="1_lk35g"]
 [ext_resource type="Texture2D" uid="uid://cuk8x6ppebd0q" path="res://assets/sprites/player/legallydistinctspaceman2.png" id="4_asu3o"]
 [ext_resource type="Texture2D" uid="uid://b0n7ykpi7ottt" path="res://assets/sprites/player/legallydistinctspaceman1.png" id="4_sm770"]
+[ext_resource type="Shader" uid="uid://ch1816nmmjpoy" path="res://scripts/shaders/astronaut.gdshader" id="4_tcdod"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lk35g"]
 shader = ExtResource("1_dmfei")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqsrh"]
+shader = ExtResource("4_tcdod")
+shader_parameter/suit_color = Vector3(7.555, 0, 0)
+shader_parameter/visor_color = Vector3(0.93, 0.825, 0.98)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fuoki"]
 radius = 16.0
@@ -119,6 +125,7 @@ texture = ExtResource("4_sm770")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=980429541]
 y_sort_enabled = true
+material = SubResource("ShaderMaterial_sqsrh")
 position = Vector2(-4.2915344e-06, -35)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_sm770")
