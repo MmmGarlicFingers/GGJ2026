@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://brs1m31xbjhyc"]
+
+[ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_wo7xp"]
+[ext_resource type="Texture2D" uid="uid://fm71ulrx6hf0" path="res://assets/ui/Sad Earth.png" id="2_bkova"]
+[ext_resource type="FontFile" uid="uid://csht18vk1ynx" path="res://assets/fonts/GoogleSansCode-VariableFont_wght.ttf" id="2_n6byb"]
+
+[node name="TextCrawl" type="Control" unique_id=883753058]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=132409349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wo7xp")
+
+[node name="SadEarth" type="Sprite2D" parent="." unique_id=853765270]
+position = Vector2(960, 540)
+texture = ExtResource("2_bkova")
+
+[node name="Label" type="Label" parent="." unique_id=16566694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_n6byb")
+theme_override_font_sizes/font_size = 32
+text = "The Earth is dying…
+
+Its heart is broken and can barely pump- 
+
+its life fluids are running dry. 
+
+To save our planet, it needs a heart transplant.
+
+Mankind has once again returned to the moon- 
+
+this time, to excavate its heart, 
+
+to save our home."
+horizontal_alignment = 1
+vertical_alignment = 1
