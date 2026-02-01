@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://lrcldbcwyaog" path="res://scripts/shaders/outline.gdshader" id="1_dmfei"]
 [ext_resource type="Script" uid="uid://pgiraq8autac" path="res://scripts/Astronaut/astronaut.gd" id="1_lk35g"]
+[ext_resource type="Texture2D" uid="uid://cuk8x6ppebd0q" path="res://assets/sprites/player/legallydistinctspaceman2.png" id="4_asu3o"]
 [ext_resource type="Texture2D" uid="uid://b0n7ykpi7ottt" path="res://assets/sprites/player/legallydistinctspaceman1.png" id="4_sm770"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lk35g"]
@@ -9,6 +10,99 @@ shader = ExtResource("1_dmfei")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fuoki"]
 radius = 16.0
+
+[sub_resource type="Animation" id="Animation_fuoki"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_sm770")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Outline:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_sm770")]
+}
+
+[sub_resource type="Animation" id="Animation_asu3o"]
+resource_name = "Look Left"
+
+[sub_resource type="Animation" id="Animation_tcdod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_sm770")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Outline:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_sm770")]
+}
+
+[sub_resource type="Animation" id="Animation_sm770"]
+resource_name = "Walk"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_sm770"), ExtResource("4_asu3o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Outline:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_sm770"), ExtResource("4_asu3o")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_asu3o"]
+_data = {
+&"Idle": SubResource("Animation_fuoki"),
+&"Look Left": SubResource("Animation_asu3o"),
+&"RESET": SubResource("Animation_tcdod"),
+&"Walk": SubResource("Animation_sm770")
+}
 
 [node name="Astronaut" type="CharacterBody2D" unique_id=1368299583]
 y_sort_enabled = true
@@ -35,3 +129,6 @@ shape = SubResource("CircleShape2D_fuoki")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1661944615]
 avoidance_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1141236304]
+libraries/ = SubResource("AnimationLibrary_asu3o")

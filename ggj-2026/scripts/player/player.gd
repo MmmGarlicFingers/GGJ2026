@@ -10,6 +10,7 @@ var can_bomb: bool = true
 
 func _physics_process(delta: float) -> void:
 	walk()
+	handle_visuals()
 	bomb()
 	move_and_slide()
 
@@ -44,3 +45,21 @@ func enable_bomb():
 
 func disable_bomb():
 	can_bomb = false
+	
+func handle_visuals() -> void:
+	var animation_player : AnimationPlayer = $AnimationPlayer
+	var outline = $Outline
+	var sprite = $Sprite2D
+	if velocity.length() > 0:
+		animation_player.play("Walk")
+	else:
+		animation_player.play("Idle")
+	
+	if velocity.x < 0:
+		if !outline.flip_h:
+			outline.flip_h = true
+			sprite.flip_h = true
+	elif velocity.x > 0:
+		if outline.flip_h:
+			outline.flip_h = false
+			sprite.flip_h = false

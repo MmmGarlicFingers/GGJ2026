@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	stopwatch += delta
 	
 	decide_next_action()
+	handle_visuals()
 	move_and_slide()
 
 func set_hover(hover_status : bool) -> void:
@@ -74,3 +75,21 @@ func get_new_target_position() -> void:
 		1,
 		true
 	)
+
+func handle_visuals() -> void:
+	var animation_player : AnimationPlayer = $AnimationPlayer
+	var outline = $Outline
+	var sprite = $Sprite2D
+	if velocity.length() > 0:
+		animation_player.play("Walk")
+	else:
+		animation_player.play("Idle")
+	
+	if velocity.x < 0:
+		if !outline.flip_h:
+			outline.flip_h = true
+			sprite.flip_h = true
+	elif velocity.x > 0:
+		if outline.flip_h:
+			outline.flip_h = false
+			sprite.flip_h = false
