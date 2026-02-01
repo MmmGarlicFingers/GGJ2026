@@ -17,5 +17,5 @@ func _ready() -> void:
 		win_scene = mover_win_scene.instantiate()
 	
 	add_child(win_scene)
-	await get_tree().create_timer(5).timeout
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://prefabs/UI/close_your_eyes.tscn")

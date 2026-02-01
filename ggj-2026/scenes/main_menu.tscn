@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0xipxi84h0c4" path="res://scripts/menu/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://msm3fo683uy" path="res://assets/themes/new_theme.tres" id="2_bqqt6"]
-[ext_resource type="Script" uid="uid://bgprvlve1lioa" path="res://scripts/menu/play.gd" id="2_ekxnf"]
+[ext_resource type="Script" path="res://scripts/menu/play.gd" id="2_ekxnf"]
 
 [node name="MainMenu" type="Control" unique_id=2060088275]
 layout_mode = 3
