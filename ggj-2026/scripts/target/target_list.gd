@@ -10,7 +10,7 @@ func _ready() -> void:
 	for child in children:
 		if child is Target:
 			targets += 1
-			child.tree_exited.connect(remove_target)
+			child.destroyed.connect(remove_target)
 
 func remove_target():
 	targets -= 1

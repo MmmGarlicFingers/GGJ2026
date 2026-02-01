@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c5x1of52y6nl4"]
 
 [ext_resource type="Script" uid="uid://br25hlxs17g57" path="res://scripts/world/map.gd" id="1_fpist"]
-[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="1_ls7hf"]
 [ext_resource type="PackedScene" uid="uid://td00433vmlir" path="res://prefabs/target/target_list.tscn" id="2_0xbm2"]
+[ext_resource type="Texture2D" uid="uid://dxv2wom5r7he7" path="res://assets/sprites/moon_over.png" id="2_58vxb"]
 [ext_resource type="PackedScene" uid="uid://cradqft2s01y0" path="res://prefabs/target/target.tscn" id="3_mbt6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbm2"]
@@ -25,9 +25,9 @@ shape = SubResource("RectangleShape2D_0xbm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=441971973]
 z_index = -1
-position = Vector2(521.5, 359.49994)
-scale = Vector2(0.7265625, 5.8046875)
-texture = ExtResource("1_ls7hf")
+position = Vector2(521.99994, 359.50006)
+scale = Vector2(0.058750056, 0.6191667)
+texture = ExtResource("2_58vxb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=848193833]
 position = Vector2(53, 0)
@@ -38,9 +38,9 @@ shape = SubResource("RectangleShape2D_0xbm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1258635765]
 z_index = -1
-position = Vector2(521.5, 364.49997)
-scale = Vector2(0.7265625, 5.726562)
-texture = ExtResource("1_ls7hf")
+position = Vector2(523.5, 362.99997)
+scale = Vector2(0.058125015, 0.6166667)
+texture = ExtResource("2_58vxb")
 
 [node name="TargetList" parent="." unique_id=906160339 instance=ExtResource("2_0xbm2")]
 

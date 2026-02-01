@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfrjn7dnx62ep"]
 
-[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="1_1ue47"]
 [ext_resource type="Script" uid="uid://br25hlxs17g57" path="res://scripts/world/map.gd" id="1_f00rq"]
+[ext_resource type="Texture2D" uid="uid://dxv2wom5r7he7" path="res://assets/sprites/moon_over.png" id="2_f00rq"]
 [ext_resource type="PackedScene" uid="uid://td00433vmlir" path="res://prefabs/target/target_list.tscn" id="2_ujrao"]
 [ext_resource type="PackedScene" uid="uid://cradqft2s01y0" path="res://prefabs/target/target.tscn" id="3_f00rq"]
 
@@ -26,9 +26,9 @@ navigation_polygon = SubResource("NavigationPolygon_k0juu")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=292915454]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(960.5, 510)
-scale = Vector2(5.5703125, 2.7656252)
-texture = ExtResource("1_1ue47")
+position = Vector2(958.5, 506.00003)
+scale = Vector2(0.45062497, 0.29333335)
+texture = ExtResource("2_f00rq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1712621729]
 

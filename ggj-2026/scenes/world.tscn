@@ -2,11 +2,25 @@
 
 [ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://dssflmqo6e24k" path="res://assets/sprites/moon.png" id="2_71j4m"]
+[ext_resource type="Texture2D" uid="uid://dxv2wom5r7he7" path="res://assets/sprites/moon_over.png" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
 [ext_resource type="AudioStream" uid="uid://ka205un2tsd7" path="res://assets/music/Astronot - Main Theme.wav" id="4_k0juu"]
 
 [node name="World" type="Node2D" unique_id=545183643]
 script = ExtResource("1_rwgxs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=424596644]
+z_index = -2
+position = Vector2(1001.5, 510)
+scale = Vector2(1.379375, 1)
+texture = ExtResource("2_qfnet")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=925723576]
+z_index = -1
+position = Vector2(954.5, 528.99994)
+scale = Vector2(1.1643751, 0.85666656)
+texture = ExtResource("2_71j4m")
 
 [node name="AstronautList" type="Node2D" parent="." unique_id=1737910571]
 y_sort_enabled = true
