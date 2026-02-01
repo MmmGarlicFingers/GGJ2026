@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctgg4i2e6ppft"]
 
 [ext_resource type="Script" uid="uid://bp1h2be587wk" path="res://scripts/game over/win_screen.gd" id="1_wv5lq"]
+[ext_resource type="AudioStream" uid="uid://drccl4pbxklfm" path="res://assets/music/Astronot - Vicroy.wav" id="2_erk2x"]
 
 [node name="WinScreen" type="Control" unique_id=1367226382]
 layout_mode = 3
@@ -10,3 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wv5lq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1583707478]
+stream = ExtResource("2_erk2x")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0xipxi84h0c4" path="res://scripts/menu/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://msm3fo683uy" path="res://assets/themes/new_theme.tres" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://bgprvlve1lioa" path="res://scripts/menu/play.gd" id="2_ekxnf"]
+[ext_resource type="AudioStream" uid="uid://dsistot38rxeb" path="res://assets/music/Astronot - Menu.wav" id="4_wu84c"]
 
 [node name="MainMenu" type="Control" unique_id=2060088275]
 layout_mode = 3
@@ -57,6 +58,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=664538245]
+stream = ExtResource("4_wu84c")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

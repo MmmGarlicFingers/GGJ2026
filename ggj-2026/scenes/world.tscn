@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4msqr7rb3xrc" path="res://scripts/world/astronaut_list.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://b4iwr3t8aooiv" path="res://scripts/world/world.gd" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://qciu1eja1e7j" path="res://prefabs/player/aimer.tscn" id="4_71j4m"]
+[ext_resource type="AudioStream" uid="uid://ka205un2tsd7" path="res://assets/music/Astronot - Main Theme.wav" id="4_k0juu"]
 
 [node name="World" type="Node2D" unique_id=545183643]
 script = ExtResource("1_rwgxs")
@@ -22,3 +23,8 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border/StaticBody2D" unique_id=836614872]
 polygon = PackedVector2Array(11, 11, 23, 1040, 1893, 1048, 1885, 23, 14, 11, 16, -14, 1977, -39, 1971, 1147, -40, 1099, -7, -15, 10, -15)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=999606644]
+stream = ExtResource("4_k0juu")
+autoplay = true
+bus = &"Music"

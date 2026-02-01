@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsistot38rxeb"
+path="res://.godot/imported/Astronot - Menu.wav-02c9c76eda8a28e045b1ae2ee3f9e020.sample"
+
+[deps]
+
+source_file="res://assets/music/Astronot - Menu.wav"
+dest_files=["res://.godot/imported/Astronot - Menu.wav-02c9c76eda8a28e045b1ae2ee3f9e020.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
