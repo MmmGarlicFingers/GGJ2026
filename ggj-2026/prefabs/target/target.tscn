@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tauv2"]
 size = Vector2(128, 256)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4ykq"]
+size = Vector2(126.5, 257.5)
+
 [node name="Target" type="Node2D" unique_id=896393059]
 script = ExtResource("1_tauv2")
 
@@ -19,3 +22,9 @@ texture = ExtResource("1_rqwfa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=535074533]
 shape = SubResource("RectangleShape2D_tauv2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1389977385]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1716062656]
+position = Vector2(-0.25, 0.25)
+shape = SubResource("RectangleShape2D_y4ykq")
