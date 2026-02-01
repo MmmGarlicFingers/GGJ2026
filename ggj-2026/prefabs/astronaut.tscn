@@ -11,8 +11,8 @@ shader = ExtResource("1_dmfei")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sqsrh"]
 shader = ExtResource("4_tcdod")
-shader_parameter/suit_color = Vector3(7.555, 0, 0)
-shader_parameter/visor_color = Vector3(0.93, 0.825, 0.98)
+shader_parameter/suit_color = Vector3(0.5, 0.44, 0.565)
+shader_parameter/visor_color = Vector3(0.93, 0.01, 0.98)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fuoki"]
 radius = 16.0

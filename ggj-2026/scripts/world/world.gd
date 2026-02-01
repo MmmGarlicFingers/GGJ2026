@@ -18,11 +18,13 @@ var maps = [
 func _ready() -> void:
 	aimer.world = self
 	astronaut_list.speed = SPEED
-	await get_tree().create_timer(0.4).timeout
-	astronaut_list.setup(20)
 	var map = maps.pick_random().instantiate()
-	map.targets_destroyed.connect(targets_destroyed)
 	add_child(map)
+	await get_tree().create_timer(.1).timeout
+	astronaut_list.setup(20)
+	
+	map.targets_destroyed.connect(targets_destroyed)
+	
 	
 func aimer_move(pos : Vector2) -> void:
 	astronaut_list.highlight_nearest(pos)

@@ -5,8 +5,26 @@ var astronaut_scene : PackedScene = preload("res://prefabs/astronaut.tscn")
 var mover_scene : PackedScene = preload("res://prefabs/player/mover.tscn")
 var highlighted : Node2D
 var speed = 300
+var colors = [
+	Vector3(1, .75, .75),
+	Vector3(.75, 1., .75),
+	Vector3(.75, .75, 1.),
+	Vector3(1., 0.75, 1.),
+	Vector3(1., 1., 0.75),
+	Vector3(.75, 1., 1.)
+]
+var colors2 = [
+	Vector3(1, .75, .75),
+	Vector3(.75, 1., .75),
+	Vector3(.75, .5, 1.),
+	Vector3(1., 0.75, 1.),
+	Vector3(1., 1., 0.75),
+	Vector3(.75, 1., 1.)
+]
 
 func setup(astro_count : int) -> void:
+	colors.shuffle()
+	colors2.shuffle()
 	var mover = mover_scene.instantiate()
 	mover.position = NavigationServer2D.map_get_random_point(
 		get_world_2d().navigation_map,
@@ -14,7 +32,8 @@ func setup(astro_count : int) -> void:
 		true
 	)
 	mover.speed = speed
-	
+	mover.get_node("Sprite2D").material.set_shader_parameter("suit_color", colors[5])
+	mover.get_node("Sprite2D").material.set_shader_parameter("visor_color", colors2[5])
 	add_child(mover)
 	
 	await get_tree().create_timer(1.).timeout
@@ -26,11 +45,12 @@ func setup(astro_count : int) -> void:
 			1,
 			true
 		)
+		astronaut.get_node("Sprite2D").material = astronaut.get_node("Sprite2D").material.duplicate()
+		astronaut.get_node("Sprite2D").material.set_shader_parameter("suit_color", colors[i/5])
+		astronaut.get_node("Sprite2D").material.set_shader_parameter("visor_color", colors2[i%5])
 		astronaut.speed = speed
 		add_child(astronaut)
-	
-	
-	
+
 
 func highlight_nearest(pos : Vector2) -> void:
 	var nearest = get_nearest_astronaut(pos)
