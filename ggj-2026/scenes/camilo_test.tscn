@@ -1,29 +1,14 @@
 [gd_scene format=3 uid="uid://c6kgeet0w7qhh"]
 
-[ext_resource type="Script" uid="uid://dcvbuudk1mhum" path="res://scripts/player/player.gd" id="1_w7wdm"]
 [ext_resource type="PackedScene" uid="uid://cradqft2s01y0" path="res://prefabs/target/target.tscn" id="2_yaxis"]
 [ext_resource type="PackedScene" uid="uid://td00433vmlir" path="res://prefabs/target/target_list.tscn" id="3_he56t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqb2"]
-size = Vector2(96, 96)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w7wdm"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[ext_resource type="PackedScene" uid="uid://dameni8akrl53" path="res://prefabs/player/mover/mover.tscn" id="3_vsyrg"]
 
 [node name="CamiloTest" type="Node2D" unique_id=420272160]
-
-[node name="Mover" type="CharacterBody2D" parent="." unique_id=476547177]
-position = Vector2(500, 500)
-script = ExtResource("1_w7wdm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mover" unique_id=1341692270]
-shape = SubResource("RectangleShape2D_vhqb2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mover" unique_id=1358825789]
-scale = Vector2(0.75, 0.75)
-texture = SubResource("CompressedTexture2D_w7wdm")
 
 [node name="TargetList" parent="." unique_id=906160339 instance=ExtResource("3_he56t")]
 
 [node name="Target" parent="TargetList" unique_id=896393059 instance=ExtResource("2_yaxis")]
 position = Vector2(971, 679)
+
+[node name="Mover" parent="." unique_id=128624373 instance=ExtResource("3_vsyrg")]
