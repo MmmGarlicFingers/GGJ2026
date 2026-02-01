@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player_label: Label = $PlayerLabel
+@onready var player_label: Label = $MarginContainer/VBoxContainer/PlayerLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
