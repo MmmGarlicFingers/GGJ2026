@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://d0xipxi84h0c4" path="res://scripts/menu/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://msm3fo683uy" path="res://assets/themes/new_theme.tres" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://bgprvlve1lioa" path="res://scripts/menu/play.gd" id="2_ekxnf"]
-[ext_resource type="AudioStream" uid="uid://dsistot38rxeb" path="res://assets/music/Astronot - Menu.wav" id="4_wu84c"]
-[ext_resource type="Script" path="res://scripts/menu/play.gd" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="2_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://u3s22rbnp0vr" path="res://assets/ui/logo.png" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://txbrhp8oktlh" path="res://assets/ui/moon.png" id="3_oa1go"]
+[ext_resource type="AudioStream" uid="uid://dsistot38rxeb" path="res://assets/music/Astronot - Menu.wav" id="4_wu84c"]
 
 [node name="MainMenu" type="Control" unique_id=2060088275]
 layout_mode = 3

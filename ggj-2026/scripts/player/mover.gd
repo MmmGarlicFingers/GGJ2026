@@ -6,7 +6,7 @@ var inputs
 
 @onready var outline = $Outline
 var is_player = true
-var speed = 300
+var speed = 150
 
 var bomb_scene = preload("res://prefabs/player/mover/bomb.tscn")
 

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dcsqknhtpbtn"]
 
+[ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_nvmv6"]
 [ext_resource type="PackedScene" uid="uid://c1xcmhrenr1sr" path="res://prefabs/UI/score.tscn" id="1_ret5w"]
 
 [node name="MoverWin" type="Control" unique_id=448593587]
@@ -9,6 +10,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1295786184]
+position = Vector2(968, 546)
+scale = Vector2(1.01875, 1.0092592)
+texture = ExtResource("1_nvmv6")
 
 [node name="Label" type="Label" parent="." unique_id=196358505]
 layout_mode = 1
