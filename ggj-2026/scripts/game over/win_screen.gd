@@ -17,5 +17,18 @@ func _ready() -> void:
 		win_scene = mover_win_scene.instantiate()
 	
 	add_child(win_scene)
+
+	if RoundManager.player_1_score >= 3:
+		await get_tree().create_timer(3).timeout
+		RoundManager.player_1_wins()
+		return
+	
+	if RoundManager.player_2_score >= 3:
+		await get_tree().create_timer(3).timeout
+		RoundManager.player_2_wins()
+		return
+	
+	RoundManager.swap_roles()
+	
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://prefabs/UI/close_your_eyes.tscn")

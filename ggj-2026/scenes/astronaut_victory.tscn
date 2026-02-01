@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dbctjaponv17j"]
+
+[ext_resource type="Texture2D" uid="uid://bqqjpnn0o0njg" path="res://assets/ui/Star-Background.jpg" id="1_deoi1"]
+[ext_resource type="FontFile" uid="uid://csht18vk1ynx" path="res://assets/fonts/GoogleSansCode-VariableFont_wght.ttf" id="2_chj1a"]
+[ext_resource type="Texture2D" uid="uid://4gummrmwfybb" path="res://assets/ui/Happy earth.png" id="2_dej2j"]
+[ext_resource type="Texture2D" uid="uid://bkxkkdbfikhmv" path="res://assets/ui/dead moon.png" id="2_q4735"]
+[ext_resource type="Script" uid="uid://cf1l78oak48rc" path="res://scripts/UI/astro_win_next.gd" id="3_deoi1"]
+
+[node name="AstronautVictory" type="Control" unique_id=2086125228]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2019680017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_deoi1")
+
+[node name="DeadMoon" type="Sprite2D" parent="." unique_id=1264817376]
+position = Vector2(1611, 262)
+scale = Vector2(0.55601853, 0.55601853)
+texture = ExtResource("2_q4735")
+
+[node name="HappyEarth" type="Sprite2D" parent="." unique_id=243244513]
+position = Vector2(960, 540)
+texture = ExtResource("2_dej2j")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=701623144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=2065175216]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_chj1a")
+theme_override_font_sizes/font_size = 24
+text = "Announcement to all citizens of Earth,
+
+Thanks to our sniper’s hard work in rooting out the enemy, the operation is complete.
+
+The moon’s heart has been excavated, and sent by rocket down to Earth, where a tunnel had already been prepared. 
+
+Earth’s rotten heart has been cut away, and replaced with the Moon’s.
+
+The moon is dead, but the Earth will live again.
+
+Sincerely,
+
+-Dag Johnson, President of Earth"
+vertical_alignment = 1
+
+[node name="Next" type="Button" parent="." unique_id=644595862]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -293.0
+offset_top = -204.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "Next"
+script = ExtResource("3_deoi1")
+
+[connection signal="pressed" from="Next" to="Next" method="_on_pressed"]
